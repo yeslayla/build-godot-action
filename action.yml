@@ -1,0 +1,9 @@
+name: "Build Godot"
+description: "Build a Godot project for multiple platforms"
+author: josephbmanley
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: loader
+  color: blue
