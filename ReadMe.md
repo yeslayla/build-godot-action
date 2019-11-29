@@ -10,7 +10,7 @@ Example:
 
 ```yaml
 steps:
-- uses: josephbmanley/build-godot-action@develop
+- uses: josephbmanley/build-godot-action@v1.0.0
   env:
     PROJECT: godot-project
 ```
