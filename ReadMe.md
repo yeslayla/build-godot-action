@@ -4,6 +4,8 @@ This action builds the godot project in your `$GITHUB_WORKSPACE`, so that you ca
 
 ## Usage
 
+This action will create a `build` folder with subdirectories for linux, windows, and mac. You must have the export preset configured for each platform to successfully export.
+
 Example:
 
 ```yaml
