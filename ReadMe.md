@@ -13,6 +13,7 @@ steps:
 - uses: josephbmanley/build-godot-action@develop
   env:
     PROJECT: godot-project
+    SUBDIRECTORY: project
 ```
 
 ### Environment Variables
@@ -22,6 +23,12 @@ steps:
     Name of the project files to output.
 
     Eg. `godot-project` will export to `godot-project.exe`
+
+- #### SUBDIRECTORY
+
+    Subdirectory to export project into.
+
+    Eg. `project` will export to `$GITHUB_WORKSPACE/build/windows/project/godot-project.exe`
 
 ## Credits
 
