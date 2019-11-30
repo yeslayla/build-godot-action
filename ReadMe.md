@@ -30,6 +30,12 @@ steps:
 
     Eg. `project` will export to `$GITHUB_WORKSPACE/build/windows/project/godot-project.exe`
 
+- #### PACKAGE
+
+    Boolean value on whether or not to zip game files. Packages will be placed in the `$GITHUB_WORKSPACE/package` directory.
+
+    Default Value: `false`
+
 ## Credits
 
 This action uses the [godot-ci](https://github.com/aBARICHELLO/godot-ci) docker image from [BARICHELLO](https://github.com/aBARICHELLO)
