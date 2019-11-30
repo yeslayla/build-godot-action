@@ -1,4 +1,4 @@
-# Build Godot
+# Build Godot Project
 
 This action builds the godot project in your `$GITHUB_WORKSPACE`, so that you can easily automate builds.
 
@@ -10,7 +10,7 @@ Example:
 
 ```yaml
 steps:
-- uses: josephbmanley/build-godot-action@develop
+- uses: josephbmanley/build-godot-action@v1.0.0
   env:
     PROJECT: godot-project
     SUBDIRECTORY: project
