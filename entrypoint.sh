@@ -34,7 +34,7 @@ godot --export "Mac OSX" ./build/mac/${SubDirectoryLocation:-""}${PROJECT}
 
 # Export for HTML5
 echo "Building ${PROJECT} for HTML5"
-mkdir -p ./build/html5
+mkdir -p ./build/html5/${SubDirectoryLocation:-""}
 godot --export "HTML5" Builds/html5/${SubDirectoryLocation:-""}index.html
 
 mkdir ${workDir}/package
