@@ -32,6 +32,11 @@ echo "Building ${PROJECT} for OSX"
 mkdir -p ./builds/mac/${SubDirectoryLocation:-""}
 godot --export "Mac OSX" ./build/mac/${SubDirectoryLocation:-""}${PROJECT}
 
+# Export for HTML5
+echo "Building ${PROJECT} for HTML5"
+mkdir -p ./builds/html5
+godot --${export} "HTML5" Builds/html5/index.html
+
 mkdir ${workDir}/package
 if [ ${PACKAGE:-"false"} = "true" ]
 then
