@@ -29,12 +29,12 @@ godot --export "Windows Desktop" ./build/windows/${SubDirectoryLocation:-""}${PR
 
 # Export for OSX
 echo "Building ${PROJECT} for OSX"
-mkdir -p ./builds/mac/${SubDirectoryLocation:-""}
+mkdir -p ./build/mac/${SubDirectoryLocation:-""}
 godot --export "Mac OSX" ./build/mac/${SubDirectoryLocation:-""}${PROJECT}
 
 # Export for HTML5
 echo "Building ${PROJECT} for HTML5"
-mkdir -p ./builds/html5
+mkdir -p ./build/html5
 godot --${export} "HTML5" Builds/html5/index.html
 
 mkdir ${workDir}/package
