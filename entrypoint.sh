@@ -2,7 +2,7 @@
 set -e
 
 workDir=`pwd`
-platforms="linux windows mac"
+platforms="linux windows mac html5"
 
 wget https://downloads.tuxfamily.org/godotengine/3.1.1/Godot_v3.1.1-stable_export_templates.tpz --quiet
 mkdir ~/.cache
