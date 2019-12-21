@@ -1,9 +1,27 @@
 name: "Build Godot"
 description: "Build a Godot project for multiple platforms"
 author: josephbmanley
+inputs:
+  name:
+    description: 'Name of the exported binary'
+    required: true
+  preset:
+    description: 'Name of the preset in `export_presets.cfg` to use'
+    required: true
+  subdirectory:
+    description: 'Optional name of the subdirectory to put exported project in'
+    required: false
+  package:
+    description: 'Set true to output an artifact zip file'
+    required: false
 runs:
   using: docker
   image: Dockerfile
+  args:
+    - ${{ inputs.name }}
+    - ${{ inputs.preset }}
+    - ${{ inputs.subdirectory }}
+    - ${{ inputs.package }}
 branding:
   icon: loader
   color: blue
