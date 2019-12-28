@@ -4,37 +4,50 @@ This action builds the godot project in your `$GITHUB_WORKSPACE`, so that you ca
 
 ## Usage
 
-This action will create a `build` folder with subdirectories for linux, windows, and mac. You must have the export preset configured for each platform to successfully export.
+This action will create a `build` folder an outputed build. You must have the export preset configured for the target platform to successfully export.
 
 Example:
 
 ```yaml
 steps:
-- uses: josephbmanley/build-godot-action@master
-  env:
-    PROJECT: godot-project
-    SUBDIRECTORY: project
+- uses: josephbmanley/build-godot-action@[VERSION]
+  with:
+    name: godot-project
+    preset: HTML5
 ```
 
-### Environment Variables
+### Inputs
 
-- #### PROJECT **REQUIRED**
+#### name **required**
 
-    Name of the project files to output.
+    The name of the exported package/binary
 
-    Eg. `godot-project` will export to `godot-project.exe`
+#### preset **required**
 
-- #### SUBDIRECTORY
+    The name of the preset found in `export_presets.cfg` you would like to build.
 
-    Subdirectory to export project into.
+#### subdirectory
 
-    Eg. `project` will export to `$GITHUB_WORKSPACE/build/windows/project/godot-project.exe`
+    *Optional*
 
-- #### PACKAGE
+    The subdirectory in the `build` folder to output build to, can be useful for self packaging.
 
-    Boolean value on whether or not to zip game files. Packages will be placed in the `$GITHUB_WORKSPACE/package` directory.
+#### package
 
-    Default Value: `false`
+    *Optional*
+
+    Boolean value, when set to true, builds artficat zip file.
+
+### Outputs
+
+#### build
+
+    The location the outputed build is placed.
+
+#### artifact
+
+    The location the outputed artifact is placed.
+
 
 ## Credits
 
