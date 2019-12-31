@@ -18,7 +18,7 @@ then
 fi
 
 # Export for project
-echo "Building ${PROJECT} for Linux"
+echo "Building $1 for $2"
 mkdir -p `pwd`/build/${SubDirectoryLocation:-""}
 godot --export $2 `pwd`/build/${SubDirectoryLocation:-""}$1
 
