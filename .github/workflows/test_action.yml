@@ -8,12 +8,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v1
-    - name: Extract branch name
-      shell: bash
-      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-      id: extract_branch
     - name: Run Action
-      uses: josephbmanley/build-godot-actions@${{ steps.extract_branch.outputs.branch }}
+      uses: ./
       with:
         name: test_project
         preset: linux
