@@ -1,8 +1,6 @@
 #!/bin/sh
 set -e
 
-workDir=`pwd`
-
 # Install export templates
 wget https://downloads.tuxfamily.org/godotengine/3.1.1/Godot_v3.1.1-stable_export_templates.tpz --quiet
 mkdir ~/.cache
@@ -19,15 +17,17 @@ fi
 
 # Export for project
 echo "Building $1 for $2"
-mkdir -p `pwd`/build/${SubDirectoryLocation:-""}
-godot --export $2 `pwd`/build/${SubDirectoryLocation:-""}$1
+mkdir -p ~/build/${SubDirectoryLocation:-""}
+cd ${5-"~"}
+godot --export $2 ~/build/${SubDirectoryLocation:-""}$1
+cd ~
 
-echo ::set-output name=build::`pwd`/build/${SubDirectoryLocation:-""}
+echo ::set-output name=build::~/build/${SubDirectoryLocation:-""}
 
 if [ "$4" = "true" ]
 then
-    mkdir `pwd`/package
-    cd `pwd`/build
-    zip `pwd`/package/artifact.zip ${SubDirectoryLocation:-"*"} -r
-    echo ::set-output name=artifact::`pwd`/package/artifact.zip
+    mkdir ~/package
+    cd ~/build
+    zip ~/package/artifact.zip ${SubDirectoryLocation:-"*"} -r
+    echo ::set-output name=artifact::~/package/artifact.zip
 fi
