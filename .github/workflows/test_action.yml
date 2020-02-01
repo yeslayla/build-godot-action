@@ -1,0 +1,17 @@
+name: Test Action
+
+on: push
+
+jobs:
+  TestAction:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Run Action
+      uses: ./
+      with:
+        name: test_project
+        preset: linux
+        projectDir: test_project
+        package: 'true'
