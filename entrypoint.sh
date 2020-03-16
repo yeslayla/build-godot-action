@@ -15,14 +15,21 @@ then
     SubDirectoryLocation="$3/"
 fi
 
+mode="export"
+if [ "$6" = "true" ]
+then
+    mode="export-debug"
+fi
+
 # Export for project
 echo "Building $1 for $2"
 mkdir -p ~/build/${SubDirectoryLocation:-""}
 cd ${5-"~"}
-godot --export $2 ~/build/${SubDirectoryLocation:-""}$1
+godot --${mode} $2 ~/build/${SubDirectoryLocation:-""}$1
 cd ~
 
 echo ::set-output name=build::~/build/${SubDirectoryLocation:-""}
+
 
 if [ "$4" = "true" ]
 then
