@@ -16,6 +16,9 @@ inputs:
     required: false
   projectDir:
     description: 'Location of Godot project in repository'
+  debugMode:
+    description: 'Whether or not to use `--export-debug`'
+    default: false
 runs:
   using: docker
   image: Dockerfile
@@ -25,6 +28,7 @@ runs:
     - ${{ inputs.subdirectory }}
     - ${{ inputs.package }}
     - ${{ inputs.projectDir }}
+    - ${{ inputs.debugMode }}
 branding:
   icon: loader
   color: blue

@@ -40,6 +40,12 @@ steps:
 
     Boolean value, when set to true, builds artficat zip file.
 
+#### debugMode
+
+    *Optional*
+
+    Boolean value, when set to true, runs export in debug mode.
+
 ### Outputs
 
 #### build
