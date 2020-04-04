@@ -1,14 +1,8 @@
 #!/bin/sh
 set -e
 
-# Install export templates
-wget https://downloads.tuxfamily.org/godotengine/3.2.1/Godot_v3.2.1-stable_export_templates.tpz --quiet
-mkdir ~/.cache
-mkdir -p ~/.config/godot
-mkdir -p ~/.local/share/godot/templates/3.2.1.stable
-unzip Godot_v3.2.1-stable_export_templates.tpz
-mv templates/* ~/.local/share/godot/templates/3.2.1.stable
-rm -f Godot_v3.2.1-stable_export_templates.tpz
+# Move godot templates already installed from the docker image to home
+mv /root/.local ~
 
 if [ "$3" != "" ]
 then
