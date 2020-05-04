@@ -19,7 +19,7 @@ fi
 echo "Building $1 for $2"
 mkdir -p ~/build/${SubDirectoryLocation:-""}
 cd ${5-"~"}
-godot --${mode} $2 ~/build/${SubDirectoryLocation:-""}$1
+godot -v --${mode} $2 ~/build/${SubDirectoryLocation:-""}$1
 cd ~
 
 echo ::set-output name=build::~/build/${SubDirectoryLocation:-""}
