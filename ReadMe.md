@@ -40,6 +40,12 @@ steps:
 
     Boolean value, when set to true, builds artficat zip file.
 
+#### projectDir
+
+    *Optional*
+
+    Directory in workspace containing your godot project.
+
 #### debugMode
 
     *Optional*
@@ -50,11 +56,11 @@ steps:
 
 #### build
 
-    The location the outputed build is placed.
+    The location the outputed build is placed relative to GitHub Workspace.
 
 #### artifact
 
-    The location the outputed artifact is placed.
+    The location the outputed artifact is placed relative to GitHub Workspace.
 
 
 ## Credits
