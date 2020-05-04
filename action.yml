@@ -10,12 +10,13 @@ inputs:
     required: true
   subdirectory:
     description: 'Optional name of the subdirectory to put exported project in'
-    required: false
+    default: ""
   package:
     description: 'Set true to output an artifact zip file'
-    required: false
+    default: false
   projectDir:
     description: 'Location of Godot project in repository'
+    default: ""
   debugMode:
     description: 'Whether or not to use `--export-debug`'
     default: false
