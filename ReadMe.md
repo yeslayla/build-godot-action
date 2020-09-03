@@ -1,8 +1,131 @@
 ![Release Version](https://img.shields.io/github/v/release/josephbmanley/build-godot-action) ![Test Action](https://github.com/josephbmanley/build-godot-action/workflows/Test%20Action/badge.svg)
 
-# Build Godot Project
+![Build Godot Project](logo.png)
 
 This action builds the godot project in your `$GITHUB_WORKSPACE`, so that you can easily automate builds.
+
+Table of Contents:
+- [Quickstart](#Quickstart)
+- [Usage](#Usage)
+- [Contributors](Contributors.md)
+
+## Quickstart
+
+### Step 1: Configure Export Presets
+
+In Godot create export templates for `linux`, `windows`, and `mac`.
+
+The name of the Windows export would be of type `Windows Desktop` and have the name `windows`. For Mac, the name would `mac` and type `Mac OSX`. Then for linux, `Linux/X11`
+
+Once you verify that `export_presets.cfg` is located in the same directory as your `project.godot` file, you can push your changes.
+
+### Step 2: Setup Worfklow on GitHub
+
+Add the following workflow file to your repository. An example file name would be `.github/workflows/build.yml`
+
+```yaml
+name: Build Godot Project
+
+on:
+  push: {}
+  pull_request: {}
+
+jobs:
+  Godot:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        platform: [linux, windows, mac]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          lfs: true
+      - name: Build
+        id: build
+        uses: josephbmanley/build-godot-action@v1.4.0
+        with:
+          name: example
+          preset: ${{ matrix.platform }}
+          debugMode: "true"
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Client - ${{ matrix.platform }}
+          path: ${{ github.workspace }}/${{ steps.build.outputs.build }}
+```
+
+#### Workflow Explaination
+
+#### Simple Changes
+
+##### Change Exports
+
+In this workflow, since it's using a matrix you can just add or remove export names from the `platform` matrix. The value being passed MUST have the same name as the preset.
+
+```yaml
+  Godot:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        platform: [win32, win64] # This project will only export using the export presets `win32` and `win64`
+```
+
+Additionally if you are not using a matrix, you can set the export preset as the parameter `preset`:
+
+```yaml
+      - name: Build
+        id: build
+        uses: josephbmanley/build-godot-action@v1.4.0
+        with:
+          name: example
+          preset: win32
+```
+
+##### Change Project Name
+
+To change the export name, you can the `name` parameter to whatever you want your project to export as.
+
+```yaml
+      - name: Build
+        id: build
+        uses: josephbmanley/build-godot-action@v1.4.0
+        with:
+          name: test # This project will export with the name "test"
+```
+
+##### Disable Debug Mode
+
+This example is set to build with debug mode enable. To disable debug, either set `debugMode` to `false` or remove the field entirely.
+
+```yaml
+      - name: Build
+        id: build
+        uses: josephbmanley/build-godot-action@v1.4.0
+        with:
+          name: example
+          preset: ${{ matrix.platform }}
+          debugMode: "false" # This project will not build in debug mode
+```
+
+##### Change Project Directory
+
+If your project is located in a subdirectory, you can use the `projectDir` to change build directories.
+
+```yaml
+      - name: Build
+        id: build
+        uses: josephbmanley/build-godot-action@v1.4.0
+        with:
+          name: example
+          preset: ${{ matrix.platform }}
+          projectDir: "test" # The project in the `test` directory will be built
+```
+
+
+### Step 3: Test your workflow!
+
+Now, whenever you make a push or pull request in that repository, GitHub Actions will build . You see and download your project in the `Actions` tab of your repository.
+
 
 ## Usage
 
@@ -61,8 +184,3 @@ steps:
 #### artifact
 
     The location the outputed artifact is placed relative to GitHub Workspace.
-
-
-## Credits
-
-This action uses the [godot-ci](https://github.com/aBARICHELLO/godot-ci) docker image from [BARICHELLO](https://github.com/aBARICHELLO)
