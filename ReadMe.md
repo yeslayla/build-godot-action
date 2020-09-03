@@ -56,6 +56,13 @@ jobs:
 
 #### Workflow Explaination
 
+This workflow has three steps:
+- **Checkout**: The Checkout step clones the project on the GitHub actions runner.
+- **Build**: This step uses this action to build the Godot project.
+- **Upload Artifact**: The Upload Artifact step uploads the output from the build step.
+
+**Matrix Explaination**: The matrix object runs the job for EACH possible value. So in this job, we are using a `platform` matrix to automatically run our workflow for the values `linux`, `windows`, and `mac`.
+
 #### Simple Changes
 
 ##### Change Exports
