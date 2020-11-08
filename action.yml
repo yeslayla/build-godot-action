@@ -16,7 +16,7 @@ inputs:
     default: false
   projectDir:
     description: 'Location of Godot project in repository'
-    default: ""
+    default: "."
   debugMode:
     description: 'Whether or not to use `--export-debug`'
     default: false
