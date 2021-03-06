@@ -82,7 +82,7 @@ Additionally if you are not using a matrix, you can set the export preset as the
 ```yaml
       - name: Build
         id: build
-        uses: josephbmanley/build-godot-action@v1.4.0
+        uses: josephbmanley/build-godot-action@v1.4.1
         with:
           name: example
           preset: win32
@@ -95,7 +95,7 @@ To change the export name, you can the `name` parameter to whatever you want you
 ```yaml
       - name: Build
         id: build
-        uses: josephbmanley/build-godot-action@v1.4.0
+        uses: josephbmanley/build-godot-action@v1.4.1
         with:
           name: test # This project will export with the name "test"
 ```
@@ -107,7 +107,7 @@ This example is set to build with debug mode enable. To disable debug, either se
 ```yaml
       - name: Build
         id: build
-        uses: josephbmanley/build-godot-action@v1.4.0
+        uses: josephbmanley/build-godot-action@v1.4.1
         with:
           name: example
           preset: ${{ matrix.platform }}
@@ -121,7 +121,7 @@ If your project is located in a subdirectory, you can use the `projectDir` to ch
 ```yaml
       - name: Build
         id: build
-        uses: josephbmanley/build-godot-action@v1.4.0
+        uses: josephbmanley/build-godot-action@v1.4.1
         with:
           name: example
           preset: ${{ matrix.platform }}
