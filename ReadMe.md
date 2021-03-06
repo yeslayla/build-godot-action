@@ -42,7 +42,7 @@ jobs:
           lfs: true
       - name: Build
         id: build
-        uses: josephbmanley/build-godot-action@v1.4.0
+        uses: josephbmanley/build-godot-action@v1.4.1
         with:
           name: example
           preset: ${{ matrix.platform }}
