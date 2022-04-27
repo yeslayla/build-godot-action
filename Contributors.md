@@ -4,7 +4,7 @@
 
 Name | Email | Twitter |
 -----|-------|---------|
-[Joseph Manley](https://github.com/josephbmanley) | [joseph@cloudsumu.com](mailto:joseph@cloudsumu.com) | [@josephbmanley](https://twitter.com/josephbmanley)
+[Layla Manley](https://github.com/yeslayla) | -- | [@yeslayla](https://twitter.com/_yeslayla)
 
 ## Contributors
 

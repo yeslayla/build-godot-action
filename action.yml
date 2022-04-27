@@ -1,6 +1,6 @@
 name: "Build Godot"
 description: "Build a Godot project for multiple platforms"
-author: josephbmanley
+author: yeslayla
 inputs:
   name:
     description: 'Name of the exported binary'
@@ -24,12 +24,12 @@ runs:
   using: docker
   image: Dockerfile
   args:
-    - ${{ inputs.name }}
-    - ${{ inputs.preset }}
-    - ${{ inputs.subdirectory }}
-    - ${{ inputs.package }}
-    - ${{ inputs.projectDir }}
-    - ${{ inputs.debugMode }}
+  - ${{ inputs.name }}
+  - ${{ inputs.preset }}
+  - ${{ inputs.subdirectory }}
+  - ${{ inputs.package }}
+  - ${{ inputs.projectDir }}
+  - ${{ inputs.debugMode }}
 branding:
   icon: loader
   color: blue
