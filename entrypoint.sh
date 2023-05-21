@@ -9,7 +9,7 @@ then
     SubDirectoryLocation="$3/"
 fi
 
-mode="export"
+mode="export-release"
 if [ "$6" = "true" ]
 then
     echo "Exporting in debug mode!"
