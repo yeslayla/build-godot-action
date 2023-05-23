@@ -13,5 +13,5 @@ jobs:
       with:
         name: test_project
         preset: linux
-        projectDir: test_project
+        projectDir: new_test_project
         package: 'true'
