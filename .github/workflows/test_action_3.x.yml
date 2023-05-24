@@ -1,4 +1,4 @@
-name: Test Action
+name: Test Action 3.x
 
 on: [push, pull_request]
 
