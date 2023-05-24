@@ -3,9 +3,8 @@ set -e
 
 # Move godot templates already installed from the docker image to home
 mkdir -v -p ~/.local/share/godot/export_templates
-ls -la /root/.local/share/godot/templates/
 cp -a /root/.local/share/godot/templates/. ~/.local/share/godot/export_templates/
-ls -la ~/.local/share/godot/export_templates/
+
 
 if [ "$3" != "" ]
 then
