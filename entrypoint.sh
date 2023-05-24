@@ -5,6 +5,7 @@ set -e
 mkdir -v -p ~/.local/share/godot/export_templates
 ls -la /root/.local/share/godot/templates/
 cp -a /root/.local/share/godot/templates/ ~/.local/share/godot/export_templates/
+ls -la ~/.local/share/godot/export_templates/
 
 if [ "$3" != "" ]
 then
