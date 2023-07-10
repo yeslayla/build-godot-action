@@ -1,4 +1,4 @@
-name: Test Action
+name: Test Action 3.x
 
 on: [push, pull_request]
 
@@ -13,5 +13,5 @@ jobs:
       with:
         name: test_project
         preset: linux
-        projectDir: test_project
+        projectDir: 3.x_test_project
         package: 'true'
