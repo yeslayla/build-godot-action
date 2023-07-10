@@ -2,17 +2,19 @@
 
 ## Maintainers
 
-Name | Email | Twitter |
------|-------|---------|
-[Joseph Manley](https://github.com/josephbmanley) | [joseph@cloudsumu.com](mailto:joseph@cloudsumu.com) | [@josephbmanley](https://twitter.com/josephbmanley)
+Name | Email |
+-----|-------|
+[Layla Manley](https://github.com/yeslayla) | [layla@layla.gg](mailto:layla@layla.gg)
 
 ## Contributors
 
 A giant thanks to everyone put in the time to improve Godot CI!
 
-Name | Email | Twitter |
----- | ----- | ------- |
+Name | Email |
+---- | ----- |
 [Tomer Keren](https://github.com/Tadaboody) | [tomerpet@gmail.com](tomerpet@gmail.com) | [@Tadaboody](https://twitter.com/Tadaboody)
+[stonedDiscord](https://github.com/stonedDiscord) | |
+[Bioblaze Payne](https://github.com/Bioblaze)|BioblazePayne@gmail.com|[BioblazePayne](https://twitter.com/BioblazePayne)
 
 ## Additional Credits
 

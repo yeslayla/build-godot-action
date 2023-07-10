@@ -1,6 +1,8 @@
-![Release Version](https://img.shields.io/github/v/release/josephbmanley/build-godot-action) ![Test Action](https://github.com/josephbmanley/build-godot-action/workflows/Test%20Action/badge.svg)
+![Release Version](https://img.shields.io/github/v/release/yeslayla/build-godot-action) ![Test Action](https://github.com/yeslayla/build-godot-action/workflows/Test%20Action/badge.svg)
 
 ![Build Godot Project](logo.png)
+
+[**This is the WIP branch for 2.x of this project. For a stable experience and documentation please use the latest 1.x**](https://github.com/yeslayla/build-godot-action/tree/1.x)
 
 This action builds the godot project in your `$GITHUB_WORKSPACE`, so that you can easily automate builds.
 
@@ -42,7 +44,7 @@ jobs:
           lfs: true
       - name: Build
         id: build
-        uses: manleydev/build-godot-action@v1.4.1
+        uses: yeslayla/build-godot-action@v1
         with:
           name: example
           preset: ${{ matrix.platform }}
@@ -82,7 +84,7 @@ Additionally if you are not using a matrix, you can set the export preset as the
 ```yaml
       - name: Build
         id: build
-        uses: manleydev/build-godot-action@v1.4.1
+        uses: yeslayla/build-godot-action@v1.4.1
         with:
           name: example
           preset: win32
@@ -95,7 +97,7 @@ To change the export name, you can the `name` parameter to whatever you want you
 ```yaml
       - name: Build
         id: build
-        uses: manleydev/build-godot-action@v1.4.1
+        uses: yeslayla/build-godot-action@v1.4.1
         with:
           name: test # This project will export with the name "test"
 ```
@@ -107,7 +109,7 @@ This example is set to build with debug mode enable. To disable debug, either se
 ```yaml
       - name: Build
         id: build
-        uses: manleydev/build-godot-action@v1.4.1
+        uses: yeslayla/build-godot-action@v1.4.1
         with:
           name: example
           preset: ${{ matrix.platform }}
@@ -121,7 +123,7 @@ If your project is located in a subdirectory, you can use the `projectDir` to ch
 ```yaml
       - name: Build
         id: build
-        uses: manleydev/build-godot-action@v1.4.1
+        uses: yeslayla/build-godot-action@v1.4.1
         with:
           name: example
           preset: ${{ matrix.platform }}
@@ -142,7 +144,7 @@ Example:
 
 ```yaml
 steps:
-- uses: manleydev/build-godot-action@[VERSION]
+- uses: yeslayla/build-godot-action@[VERSION]
   with:
     name: godot-project
     preset: HTML5
