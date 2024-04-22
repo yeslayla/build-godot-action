@@ -1,4 +1,4 @@
-rt_#!/bin/sh
+#!/bin/sh
 set -e
 
 # Move godot templates already installed from the docker image to home
