@@ -42,7 +42,7 @@ jobs:
           lfs: true
       - name: Build
         id: build
-        uses: krynv/build-godot-action@v1.0
+        uses: krynv/build-godot-action@v1.0.1
         with:
           name: example
           preset: ${{ matrix.platform }}
