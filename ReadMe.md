@@ -37,18 +37,18 @@ jobs:
       matrix:
         platform: [linux, windows, mac]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4.1.4
         with:
           lfs: true
       - name: Build
         id: build
-        uses: manleydev/build-godot-action@v1.4.1
+        uses: manleydev/build-godot-action@v1.5.0
         with:
           name: example
           preset: ${{ matrix.platform }}
           debugMode: "true"
       - name: Upload Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: Client - ${{ matrix.platform }}
           path: ${{ github.workspace }}/${{ steps.build.outputs.build }}
