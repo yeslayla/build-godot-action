@@ -1,4 +1,4 @@
-![Release Version](https://img.shields.io/github/v/release/josephbmanley/build-godot-action) ![Test Action](https://github.com/josephbmanley/build-godot-action/workflows/Test%20Action/badge.svg)
+![Release Version](https://img.shields.io/github/v/release/krynv/build-godot-action)
 
 ![Build Godot Project](logo.png)
 
@@ -42,7 +42,7 @@ jobs:
           lfs: true
       - name: Build
         id: build
-        uses: manleydev/build-godot-action@v1.5.0
+        uses: krynv/build-godot-action@v1.0
         with:
           name: example
           preset: ${{ matrix.platform }}
