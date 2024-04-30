@@ -1,6 +1,6 @@
-name: "Build Godot"
+name: "Build Godot Project"
 description: "Build a Godot project for multiple platforms"
-author: josephbmanley
+author: krynv (based on original project from yeslayla & josephbman)
 inputs:
   name:
     description: 'Name of the exported binary'
