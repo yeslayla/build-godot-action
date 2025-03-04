@@ -1,3 +1,7 @@
+This project is not currently being maintained. If you want to build Godot projects with GitHub Actions, I'd recommend taking a look at https://github.com/marketplace/actions/godot-ci
+
+---
+
 ![Release Version](https://img.shields.io/github/v/release/yeslayla/build-godot-action) ![Test Action](https://github.com/yeslayla/build-godot-action/workflows/Test%20Action/badge.svg)
 
 ![Build Godot Project](logo.png)
